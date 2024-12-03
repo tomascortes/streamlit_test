@@ -66,8 +66,8 @@ def main():
             cost_per_user,
         )
 
-        st.metric("Partner Value (Initial)", f"${pv_initial:,f}")
-        st.metric("Partner Value (Monthly)", f"${pv_monthly:,f}")
+        st.metric("Partner Value (Initial)", f"${pv_initial:,.0f}")
+        st.metric("Partner Value (Monthly)", f"${pv_monthly:,.0f}")
         st.metric("KPI", f"{kpi:.2f}%", delta=f"{kpi - 100:.2f}%")
 
         st.header("Interpretation")
