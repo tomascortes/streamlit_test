@@ -30,27 +30,27 @@ def main():
     with left_col:
         st.header("Initial Values")
         initial_sales = st.number_input(
-            "Nⁱ: Monthly Sales", min_value=0, value=100
+            "N_i: Monthly Sales", min_value=0, value=100
         )
         price_initial = st.number_input(
-            "Pⁱ: Product Price / Monthly Payment", min_value=0.0, value=10.0
+            "P_i: Product Price / Monthly Payment", min_value=0, value=10
         )
         retention_initial = st.number_input(
-            "Rⁱ: Average Retention (Monthly)", min_value=0.0, value=12.0
+            "R_i: Average Retention (Monthly)", min_value=0, value=12
         )
 
         st.header("Values post-mok")
         monthly_sales = st.number_input(
-            "Nᵐ: Monthly Sales", min_value=0, value=120
+            "N_m: Monthly Sales", min_value=0, value=120
         )
         price_monthly = st.number_input(
-            "Pᵐ: Product Price / Monthly Payment", min_value=0.0, value=10.0
+            "P_m: Product Price / Monthly Payment", min_value=0, value=10
         )
         retention_monthly = st.number_input(
-            "Rᵐ: Average Retention (Monthly)", min_value=0.0, value=11.0
+            "R_m: Average Retention (Monthly)", min_value=0, value=15
         )
         cost_per_user = st.number_input(
-            "C: Cost per User (Monthly)", min_value=0.0, value=2.0
+            "C: Cost per User (Monthly)", min_value=0, value=2
         )
 
     # Results Section (Right Column)
@@ -66,8 +66,8 @@ def main():
             cost_per_user,
         )
 
-        st.metric("Partner Value (Initial)", f"${pv_initial:,.2f}")
-        st.metric("Partner Value (Monthly)", f"${pv_monthly:,.2f}")
+        st.metric("Partner Value (Initial)", f"${pv_initial:,f}")
+        st.metric("Partner Value (Monthly)", f"${pv_monthly:,f}")
         st.metric("KPI", f"{kpi:.2f}%", delta=f"{kpi - 100:.2f}%")
 
         st.header("Interpretation")
